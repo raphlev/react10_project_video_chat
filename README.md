@@ -9,3 +9,6 @@ In this tutorial, we're going to build and deploy a React Video Chat Application
 
 Setup:
 - run ```npm i && npm start``` for both client and server side to start the development server
+
+## utube link
+https://www.youtube.com/watch?v=oxFr7we3LC8
