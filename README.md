@@ -14,6 +14,7 @@ Setup:
 https://www.youtube.com/watch?v=oxFr7we3LC8
 
 ## Deploy Server on Heroku
+Create new App on Heroku: react10-project-video-chat
 https://dashboard.heroku.com/apps/react10-project-video-chat/deploy/heroku-git
 
 Install the Heroku CLI
