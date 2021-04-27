@@ -17,7 +17,8 @@ https://www.youtube.com/watch?v=oxFr7we3LC8
 https://dashboard.heroku.com/apps/react10-project-video-chat/deploy/heroku-git
 
 Install the Heroku CLI
-Download and install the Heroku CLI.
+Download and install the Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
+npm install -g heroku  (not recommended method, make sure to use latest release of Node.js)
 
 If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
 
@@ -50,4 +51,3 @@ Drag and drop your site output folder (=build) here:
 https://app.netlify.com/teams/raphlev/sites
 
 --> Client running on https://react10-project-video-chat.netlify.app/
-
