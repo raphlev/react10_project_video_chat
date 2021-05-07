@@ -2,16 +2,20 @@ import React, { createContext, useState, useRef, useEffect } from 'react';
 import { io } from 'socket.io-client';
 import Peer from 'simple-peer';
 
+require('dotenv').config();
+
 const SocketContext = createContext();
 
 // process.env.NETLIFY can be used to check if the client build is running on Netlify (read-only var on netlify always equals to true).
 // https://answers.netlify.com/t/support-guide-using-environment-variables-on-netlify-correctly/267/18
-const server = process.env.NETLIFY
-  ? 'https://react10-project-video-chat.herokuapp.com'
-  : 'http://localhost:5000';
+const server = (process.env.NODE_ENV !== 'production')
+  ? 'http://localhost:5000'
+  : 'https://react10-project-video-chat.herokuapp.com';
 const socket = io(server);
 // eslint-disable-next-line no-console
 console.log(`Lookup for existing server: ${server}`);
+// eslint-disable-next-line no-console
+console.log(`NODE environment: ${process.env.NODE_ENV}`);
 
 const ContextProvider = ({ children }) => {
   const [callAccepted, setCallAccepted] = useState(false);

@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 5000;
 const INDEX = '/index.html';
 const server = express()
   .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
+  // eslint-disable-next-line no-console
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 const origin = process.env.PORT
