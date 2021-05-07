@@ -14,29 +14,45 @@ Setup:
 https://www.youtube.com/watch?v=oxFr7we3LC8
 
 ## Deploy Server on Heroku
-Create new App on Heroku: react10-project-video-chat
-https://dashboard.heroku.com/apps/react10-project-video-chat/deploy/heroku-git
 
-Install the Heroku CLI
-Download and install the Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
-npm install -g heroku  (not recommended method, make sure to use latest release of Node.js)
+## deploy server heroku  
+'process.env.PORT' will be populated automatically by heroku  
+  
+add Procfile :   
+  web: node server.js  
+  --> enable heroku to start the app as soon as the application is deployed  
 
-If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+Connect to Heroku and create new App: react10-project-video-chat  
 
-$ heroku login
-Clone the repository
-Use Git to clone react10-project-video-chat's source code to your local machine.
+Install the Heroku CLI  
+Download and install the Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli  
+npm install -g heroku  (not recommended method, make sure to use latest release of Node.js)  
 
-$ heroku git:clone -a react10-project-video-chat
-$ cd react10-project-video-chat
-Deploy your changes
-Make some changes to the code you just cloned and deploy them to Heroku using Git.
 
-$ git add .
-$ git commit -am "make it better"
-$ git push heroku master
+heroku login 
+heroku config 
+cd ../server  
+git init  
+heroku git:remote -a react10-project-video-chat  
+heroku config
+git add .  
+git commit -am "xx"  
+heroku config  
+heroku config:set DB_USER=xxxx  
+heroku config:set DB_PASS=xxxx  
+heroku config  
+git push heroku master  
+heroku logs --tail  
 
---> Server running on https://react10-project-video-chat.herokuapp.com/
+2021-05-06T09:24:40.000000+00:00 app[api]: Build succeeded  
+2021-05-06T09:24:40.735371+00:00 heroku[web.1]: Restarting  
+2021-05-06T09:24:40.760294+00:00 heroku[web.1]: State changed from up to starting  
+2021-05-06T09:24:42.442738+00:00 heroku[web.1]: Stopping all processes with SIGTERM  
+2021-05-06T09:24:42.652427+00:00 heroku[web.1]: Process exited with status 143  
+2021-05-06T09:24:46.985194+00:00 heroku[web.1]: Starting process with command `node server.js`  
+2021-05-06T09:24:53.666648+00:00 heroku[web.1]: State changed from starting to up  
+
+--> Server URL: https://react10-project-video-chat.herokuapp.com/  
 
 ## Deploy client on Netlify
 
