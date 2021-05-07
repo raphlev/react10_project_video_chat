@@ -8,6 +8,7 @@ const server = process.env.PORT
   ? 'https://react10-project-video-chat.herokuapp.com'
   : 'http://localhost:5000';
 const socket = io(server);
+// eslint-disable-next-line no-console
 console.log(`Lookup for existing server: ${server}`);
 
 const ContextProvider = ({ children }) => {
