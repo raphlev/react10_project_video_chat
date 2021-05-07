@@ -44,27 +44,21 @@ heroku config
 git push heroku master  
 heroku logs --tail  
 
-2021-05-06T09:24:40.000000+00:00 app[api]: Build succeeded  
-2021-05-06T09:24:40.735371+00:00 heroku[web.1]: Restarting  
-2021-05-06T09:24:40.760294+00:00 heroku[web.1]: State changed from up to starting  
-2021-05-06T09:24:42.442738+00:00 heroku[web.1]: Stopping all processes with SIGTERM  
-2021-05-06T09:24:42.652427+00:00 heroku[web.1]: Process exited with status 143  
-2021-05-06T09:24:46.985194+00:00 heroku[web.1]: Starting process with command `node server.js`  
-2021-05-06T09:24:53.666648+00:00 heroku[web.1]: State changed from starting to up  
+2021-05-07T11:10:36.000000+00:00 app[api]: Build succeeded
+2021-05-07T11:10:39.079233+00:00 heroku[web.1]: Starting process with command `node index.js`
+2021-05-07T11:10:42.417580+00:00 app[web.1]: Listening on 46257
+2021-05-07T11:10:43.684618+00:00 heroku[web.1]: State changed from starting to up
+
 
 --> Server URL: https://react10-project-video-chat.herokuapp.com/  
 
 ## Deploy client on Netlify
 
-Update client/src/SocketContext.js
-// const socket = io('http://localhost:5000');
-const socket = io('https://react10-project-video-chat.herokuapp.com');
+npm i  
+npm run build  
 
-cd client
-npm i
-npm run build
+Deploy from GIT  
 
-Drag and drop your site output folder (=build) here:
-https://app.netlify.com/teams/raphlev/sites
+Update Site Name to rlu-gdoc  
 
 --> Client running on https://rlu-video-chat.netlify.app/
