@@ -7,7 +7,7 @@ const server = express()
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 const origin = process.env.PORT
-  ? 'https://rlu-gdoc.netlify.app'
+  ? 'https://rlu-video-chat.netlify.app'
   : 'http://localhost:3000';
 const io = require('socket.io')(server, {
   cors: {

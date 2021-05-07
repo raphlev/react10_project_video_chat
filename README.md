@@ -59,6 +59,6 @@ npm run build
 
 Deploy from GIT  
 
-Update Site Name to rlu-gdoc  
+Update Site Name to rlu-video-chat 
 
 --> Client running on https://rlu-video-chat.netlify.app/
