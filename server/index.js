@@ -1,20 +1,19 @@
-const app = require("express")();
-const server = require("http").createServer(app);
-const cors = require("cors");
-
-const io = require("socket.io")(server, {
-	cors: {
-		origin: "*",
-		methods: [ "GET", "POST" ]
-	}
-});
-
-app.use(cors());
+const express = require("express");
 
 const PORT = process.env.PORT || 5000;
+const INDEX = "/index.html";
+const server = express()
+  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
+  .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
-app.get('/', (req, res) => {
-	res.send('Running');
+const origin = process.env.PORT
+  ? "https://rlu-gdoc.netlify.app"
+  : "http://localhost:3000";
+const io = require("socket.io")(server, {
+  cors: {
+    origin: origin,
+    methods: ["GET", "POST"]
+  }
 });
 
 io.on("connection", (socket) => {
@@ -32,5 +31,3 @@ io.on("connection", (socket) => {
 		io.to(data.to).emit("callAccepted", data.signal)
 	});
 });
-
-server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

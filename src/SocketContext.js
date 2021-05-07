@@ -4,8 +4,11 @@ import Peer from 'simple-peer';
 
 const SocketContext = createContext();
 
-// const socket = io('http://localhost:5000');
-const socket = io('https://react10-project-video-chat.herokuapp.com');
+const server = process.env.PORT
+  ? 'https://react10-project-video-chat.herokuapp.com'
+  : 'http://localhost:5000';
+const socket = io(server);
+console.log(`Lookup for existing server: ${server}`);
 
 const ContextProvider = ({ children }) => {
   const [callAccepted, setCallAccepted] = useState(false);

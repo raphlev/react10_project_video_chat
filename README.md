@@ -51,4 +51,4 @@ npm run build
 Drag and drop your site output folder (=build) here:
 https://app.netlify.com/teams/raphlev/sites
 
---> Client running on https://react10-project-video-chat.netlify.app/
+--> Client running on https://rlu-video-chat.netlify.app/
